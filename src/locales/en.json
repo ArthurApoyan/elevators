@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "Elevator Simulator",
+    "subtitle": "Configure buildings and floors before simulation.",
+    "language": "Language"
+  },
+  "building": {
+    "floors": "Floors",
+    "elevators": "Elevators",
+    "floorLabel": "Floor {n}"
+  },
+  "buildings": {
+    "alpha": "Building 1",
+    "bravo": "Building 2",
+    "charlie": "Building 3"
+  },
+  "language": {
+    "english": "English",
+    "armenian": "Հայերեն",
+    "spanish": "Español"
+  },
+  "elevator": {
+    "label": "Elevator",
+    "currentFloor": "Current",
+    "queue": "Queue",
+    "status": {
+      "idle": "Idle",
+      "moving": "Moving",
+      "doorsOpen": "Doors open"
+    }
+  },
+  "sound": {
+    "label": "Sound",
+    "on": "On",
+    "off": "Off"
+  },
+  "snapshot": {
+    "download": "Download snapshot",
+    "error": "Snapshot failed"
+  }
+}

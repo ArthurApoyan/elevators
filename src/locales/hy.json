@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "Վերելակի սիմուլյատոր",
+    "subtitle": "Կարգավորեք շենքերը և հարկերը նախքան սիմուլյացիան։",
+    "language": "Լեզու"
+  },
+  "building": {
+    "floors": "Հարկեր",
+    "elevators": "Վերելակներ",
+    "floorLabel": "Հարկ {n}"
+  },
+  "buildings": {
+    "alpha": "Շենք 1",
+    "bravo": "Շենք 2",
+    "charlie": "Շենք 3"
+  },
+  "language": {
+    "english": "English",
+    "armenian": "Հայերեն",
+    "spanish": "Español"
+  },
+  "elevator": {
+    "label": "Վերելակ",
+    "currentFloor": "Ընթացիկ",
+    "queue": "Հերթ",
+    "status": {
+      "idle": "Սպասում",
+      "moving": "Շարժվում է",
+      "doorsOpen": "Դռները բաց են"
+    }
+  },
+  "sound": {
+    "label": "Ձայն",
+    "on": "Միացված",
+    "off": "Անջատված"
+  },
+  "snapshot": {
+    "download": "Ներբեռնել պատկերը",
+    "error": "Պատկերի ստեղծումը ձախողվեց"
+  }
+}

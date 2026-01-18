@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "Simulador de Ascensores",
+    "subtitle": "Configura los edificios y los pisos antes de la simulación.",
+    "language": "Idioma"
+  },
+  "building": {
+    "floors": "Pisos",
+    "elevators": "Ascensores",
+    "floorLabel": "Piso {n}"
+  },
+  "buildings": {
+    "alpha": "Edificio 1",
+    "bravo": "Edificio 2",
+    "charlie": "Edificio 3"
+  },
+  "language": {
+    "english": "English",
+    "armenian": "Հայերեն",
+    "spanish": "Español"
+  },
+  "elevator": {
+    "label": "Ascensor",
+    "currentFloor": "Actual",
+    "queue": "Cola",
+    "status": {
+      "idle": "En espera",
+      "moving": "En movimiento",
+      "doorsOpen": "Puertas abiertas"
+    }
+  },
+  "sound": {
+    "label": "Sonido",
+    "on": "Activado",
+    "off": "Desactivado"
+  },
+  "snapshot": {
+    "download": "Descargar captura",
+    "error": "Error al crear la captura"
+  }
+}
