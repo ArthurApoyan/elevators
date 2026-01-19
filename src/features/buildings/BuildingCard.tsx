@@ -9,31 +9,66 @@ import { ElevatorPanel } from './ElevatorPanel';
 import { ElevatorShaft } from './ElevatorShaft';
 import { FloorList } from './FloorList';
 
+const BuildingCardShell = styled(Card)`
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(23, 30, 42, 0.95), rgba(15, 19, 25, 0.98));
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -40% 0 auto;
+    height: 220px;
+    background: radial-gradient(circle at top, rgba(112, 189, 23, 0.12), transparent 60%);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+`;
+
 const Header = styled.div`
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 12px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+  border-radius: ${({ theme }) => theme.radii.md}px;
+  background: rgba(17, 23, 33, 0.85);
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  margin-bottom: 14px;
 `;
 
 const Name = styled.h2`
-  font-size: 20px;
+  font-size: 22px;
   margin: 0;
+  letter-spacing: 0.02em;
 `;
 
-const Meta = styled.div`
+const HeaderMeta = styled.div`
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+`;
+
+const MetaChip = styled.div`
+  font-size: 12px;
   color: ${({ theme }) => theme.colors.muted};
-  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  background: rgba(12, 16, 23, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 `;
 
 const Body = styled.div`
   display: grid;
-  gap: 16px;
+  gap: 18px;
 `;
 
 const Visualization = styled.div`
   display: grid;
-  gap: 16px;
+  gap: 18px;
   align-items: start;
   grid-template-columns: 1fr;
 
@@ -45,6 +80,10 @@ const Visualization = styled.div`
 const ShaftColumn = styled.div`
   display: grid;
   gap: 12px;
+  padding: 12px;
+  border-radius: ${({ theme }) => theme.radii.md}px;
+  background: rgba(14, 18, 26, 0.75);
+  border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
 const FloorHeader = styled.div`
@@ -71,6 +110,16 @@ const ActionButton = styled.button`
   cursor: pointer;
   font-size: 13px;
   padding: 6px 10px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.accent};
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 `;
 
 const SnapshotError = styled.div`
@@ -136,14 +185,18 @@ export const BuildingCard = ({ building, state, options, onCall }: BuildingCardP
   };
 
   return (
-    <Card data-testid="building-card">
+    <BuildingCardShell data-testid="building-card">
       <div ref={snapshotRef}>
         <Header>
           <Name>{t(building.nameKey)}</Name>
-          <Meta>
-            {t('building.floors')}: {building.floorsCount} | {t('building.elevators')}:{' '}
-            {building.elevatorsCount}
-          </Meta>
+          <HeaderMeta>
+            <MetaChip>
+              {t('building.floors')}: {building.floorsCount}
+            </MetaChip>
+            <MetaChip>
+              {t('building.elevators')}: {building.elevatorsCount}
+            </MetaChip>
+          </HeaderMeta>
         </Header>
         <Body>
           {state && (
@@ -174,6 +227,6 @@ export const BuildingCard = ({ building, state, options, onCall }: BuildingCardP
         </ActionButton>
         {snapshotError && <SnapshotError>{snapshotError}</SnapshotError>}
       </Actions>
-    </Card>
+    </BuildingCardShell>
   );
 };
